@@ -6,7 +6,6 @@
  */
 
 #include "tasks_priv.h"
-#include "tasks.h"
 
 void SRV_voidRTOSMain(void)
 {
@@ -47,13 +46,12 @@ void SRV_voidRTOSMain(void)
     for(;;);
 }
 
-// ========================= TASK IMPLEMENTATIONS =========================
 void SRV_voidReadDoorStateTask(void *pvParameters)
 {
     for(;;)
     {
     	// getDoorStateAsync();
-        vTaskDelay(pdMS_TO_TICKS(20));
+        vTaskDelay(pdMS_TO_TICKS(READ_DOOR_STATE_DELAY));
 
         /*
          * 	in door state callback function
@@ -73,7 +71,7 @@ void SRV_voidReadGearStateTask(void *pvParameters)
     for(;;)
     {
     	// getGearStateAsync();
-        vTaskDelay(pdMS_TO_TICKS(10));
+        vTaskDelay(pdMS_TO_TICKS(READ_GEAR_STATE_DELAY));
 
         /*
          * 	in gear state callback function
@@ -89,7 +87,7 @@ void SRV_voidReadSpeedTask(void *pvParameters)
     for(;;)
     {
     	// getSpeedAsync();
-        vTaskDelay(pdMS_TO_TICKS(10));
+        vTaskDelay(pdMS_TO_TICKS(READ_SPEED_DELAY));
         /*
          * 	in speed adc callback function
     		SRV_structSpeedMsg_t msg;
@@ -104,7 +102,7 @@ void SRV_voidReadRpmTask(void *pvParameters)
     for(;;)
     {
     	// getRpmAsync();
-        vTaskDelay(pdMS_TO_TICKS(50));
+        vTaskDelay(pdMS_TO_TICKS(READ_RPM_DELAY));
         /*
          * 	in rpm adc callback function
     		SRV_structRPMMsg_t msg;
@@ -119,7 +117,7 @@ void SRV_voidReadSafeDistanceTask(void *pvParameters)
     for(;;)
     {
     	// getSafeDistanceAsync();
-        vTaskDelay(pdMS_TO_TICKS(50));
+        vTaskDelay(pdMS_TO_TICKS(READ_SAFE_DISTANCE_DELAY));
         /*
          * 	in ultrasonic callback function
     		SRV_structSafeDistanceMsg_t msg;
@@ -143,7 +141,7 @@ void SRV_voidSendDoorStateThroughCANTask(void *pvParameters)
     	// send CAN message async
 
     	// delay
-        vTaskDelay(pdMS_TO_TICKS(20));
+        vTaskDelay(pdMS_TO_TICKS(SEND_DOOR_STATE_DELAY));
     }
 }
 
@@ -160,7 +158,7 @@ void SRV_voidSendGearStateThroughCANTask(void *pvParameters)
     	// send CAN message async
 
     	// delay
-        vTaskDelay(pdMS_TO_TICKS(20));
+        vTaskDelay(pdMS_TO_TICKS(SEND_GEAR_STATE_DELAY));
     }
 }
 
@@ -177,7 +175,7 @@ void SRV_voidSendSpeedThroughCANTask(void *pvParameters)
     	// send CAN message async
 
     	// delay
-        vTaskDelay(pdMS_TO_TICKS(20));
+        vTaskDelay(pdMS_TO_TICKS(SEND_SPEED_DELAY));
     }
 }
 
@@ -194,7 +192,7 @@ void SRV_voidSendRpmThroughCANTask(void *pvParameters)
     	// send CAN message async
 
     	// delay
-        vTaskDelay(pdMS_TO_TICKS(20));
+        vTaskDelay(pdMS_TO_TICKS(SEND_RPM_DELAY));
     }
 }
 
@@ -211,6 +209,6 @@ void SRV_voidSendSafeDistanceThroughCANTask(void *pvParameters)
     	// send CAN message async
 
     	// delay
-        vTaskDelay(pdMS_TO_TICKS(20));
+        vTaskDelay(pdMS_TO_TICKS(SEND_SAFE_DISTANCE_DELAY));
     }
 }

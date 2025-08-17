@@ -45,6 +45,20 @@ typedef enum
 	SEND_SAFE_DISTANCE_PRI = (tskIDLE_PRIORITY + 1U),
 } SRV_enuTasksPriorities_t;
 
+typedef enum
+{
+	READ_DOOR_STATE_DELAY = 20,
+	READ_GEAR_STATE_DELAY = 10,
+	READ_SPEED_DELAY = 10,
+	READ_RPM_DELAY = 10,
+	READ_SAFE_DISTANCE_DELAY = 50,
+	SEND_DOOR_STATE_DELAY = 20,
+	SEND_GEAR_STATE_DELAY = 20,
+	SEND_SPEED_DELAY = 20,
+	SEND_RPM_DELAY = 20,
+	SEND_SAFE_DISTANCE_DELAY = 20,
+} SRV_enuTasksDelay_t;
+
 typedef struct {
     uint8_t frontRightDoorState : 2;
     uint8_t frontLeftDoorState 	: 2;
