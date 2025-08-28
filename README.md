@@ -19,3 +19,6 @@ There are two categories for tasks:
 
 ## Sequence Diagram
 <img width="1234" height="777" alt="BaremetalxCommManager" src="https://github.com/user-attachments/assets/fd6694b9-6edb-45b2-80a5-eed0ea0c9a89" />
+
+## Expansion Board
+A PCB was designed on Altium Designer to ease accessing the hardware for the board. If you are curious, you can find it [here](https://github.com/Coda-ITI/NXP-Expansion-Board).
